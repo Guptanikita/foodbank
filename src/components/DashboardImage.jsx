@@ -3,6 +3,7 @@ import homepage from "assets/img/blue-home-page.jpg";
 import React, { Component } from "react";
 import Button from "components/CustomButton/CustomButton.jsx";
 import RequestFoodForm from "./RequestFoodForm";
+import WantToHelpForm from "./WantToHelpForm";
 
 var textStyle = {
     position: 'absolute',
@@ -15,6 +16,10 @@ function DashboardImage() {
     const [show, setShow] = React.useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const [show1, setShow1] = React.useState(false);
+    const handleClose1 = () => setShow1(false);
+    const handleShow1 = () => setShow1(true);
 
     return (
         <div style={{ width: 'auto' }}>
@@ -54,9 +59,30 @@ function DashboardImage() {
                             </Modal>
                             </>
                         &emsp;
-                        <Button bsStyle="neutral" pullLeft fill >
-                           I want to Help
+                        <>
+                            <Button bsStyle="neutral" pullLeft fill onClick={handleShow1}>
+                                I want to Help
                         </Button>
+                            <Modal
+                                show={show1}
+                                onHide={handleClose1}
+                                backdrop="static"
+                                keyboard={false}
+                            >
+                                <Modal.Header closeButton>
+                                    <Modal.Title style={{ color: 'black' }}> Donors</Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body style={{ color: 'black' }}>
+                                    <WantToHelpForm />
+                                </Modal.Body>
+                                <Modal.Footer >
+                                    <Button variant="secondary" onClick={handleClose1}>
+                                        Close
+                                    </Button>
+                                </Modal.Footer>
+
+                            </Modal>
+                            </>
                         </div>
                     </div>
                 </div>

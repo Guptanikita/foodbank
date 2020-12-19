@@ -43,11 +43,9 @@ const RequestFoodForm = () => {
             </FormGroup>
             <FormGroup>
                 <ControlLabel>Detail</ControlLabel>
-                <FormControl onChange={event => setInput('description', event.target.value)} placeholder="Name" />
+                <FormControl as="textarea" onChange={event => setInput('description', event.target.value)} placeholder="Name" />
             </FormGroup>
-
-            
-           {/* (/*) <Button variant="primary" onClick={addTodo}>Create</Button> */} 
+             {/* <Button variant="primary" onClick={addTodo}>Create</Button>  */}
         </Form>
     )
 }

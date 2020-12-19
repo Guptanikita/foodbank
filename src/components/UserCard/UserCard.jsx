@@ -40,6 +40,7 @@ export class UserCard extends Component {
             </a>
           </div>
           <p className="description text-center">{this.props.description}</p>
+          <p className="description text-center"><strong>{this.props.jobtitle}</strong></p>
         </div>
         <hr />
         <div className="text-center">{this.props.socials}</div>
